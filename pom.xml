@@ -107,6 +107,7 @@
         <jmh.version>1.27</jmh.version>
 
         <spotless.version>2.46.1</spotless.version>
+        <spotless.delimiter>package</spotless.delimiter>
         <spotless.scalafmt.version>3.4.3</spotless.scalafmt.version>
         <spotless.delimiter>package</spotless.delimiter>
         <spotless.license.header>
@@ -1005,7 +1006,10 @@
                                     org.apache.fluss,,javax,java,scala,\#
                                 </order>
                             </importOrder>
-
+                            <licenseHeader>
+                                <file>${maven.multiModuleProjectDirectory}/copyright.txt</file>
+                                <delimiter>${spotless.delimiter}</delimiter>
+                            </licenseHeader>
                             <removeUnusedImports/>
                             <removeWildcardImports/>
                         </java>
@@ -1017,7 +1021,10 @@
                                 <version>3.4.3</version>
                                 <file>${maven.multiModuleProjectDirectory}/.scalafmt.conf</file>
                             </scalafmt>
-
+                            <licenseHeader>
+                                <file>${maven.multiModuleProjectDirectory}/copyright.txt</file>
+                                <delimiter>${spotless.delimiter}</delimiter>
+                            </licenseHeader>
                         </scala>
                     </configuration>
                     <executions>
